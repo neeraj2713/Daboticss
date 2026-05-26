@@ -1,0 +1,210 @@
+@import "tailwindcss";
+
+/* 🌈 KIDS GRADIENT BACKGROUND */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(
+    180deg,
+    #fdfefe 0%,
+    #f1f5ff 50%,
+    #eef2ff 100%
+  );
+  color: #0f172a;
+  overflow-x: hidden;
+}
+
+
+
+/* ☁️ FLOATING CLOUDS */
+.cloud {
+  position: absolute;
+  opacity: 0.25;
+  animation: cloudMove 60s linear infinite;
+}
+
+.cloud.small { width: 120px; top: 10%; left: -150px; }
+.cloud.medium { width: 200px; top: 30%; left: -220px; }
+.cloud.large { width: 280px; top: 50%; left: -300px; }
+
+@keyframes cloudMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(120vw); }
+}
+
+/* 🤖 ROBOT FLOAT */
+.robot {
+  position: absolute;
+  right: 6%;
+  bottom: 10%;
+  width: 220px;
+  animation: robotFloat 4s ease-in-out infinite;
+}
+
+@keyframes robotFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* ✈️ PLANE FLY */
+.plane {
+  position: absolute;
+  top: 15%;
+  right: -200px;
+  width: 160px;
+  animation: planeFly 18s linear infinite;
+}
+
+@keyframes planeFly {
+  from { transform: translateX(0); }
+  to { transform: translateX(-140vw); }
+}
+
+/* 🚀 ROCKET BOUNCE */
+.rocket {
+  display: inline-block;
+  animation: rocketBounce 2s ease-in-out infinite;
+}
+
+@keyframes rocketBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fly {
+  from { transform: translateX(0); }
+  to { transform: translateX(-120vw); }
+}
+
+/* ⭐ STARS */
+.star {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #ffd166;
+  border-radius: 50%;
+  animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+/* 🤖 ROBOT WRAPPER */
+/* 🤖 ROBOT FLOAT */
+/* 🤖 ROBOT FLOAT */
+/* 🤖 ROBOT FLOAT */
+.robot {
+  width: 220px;
+  animation: robotFloat 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+/* 👋 ROBOT WAVES ON BUTTON HOVER */
+.robot.hovered {
+  animation: robotWave 0.8s ease-in-out infinite;
+}
+
+/* 👋 WAVE ANIMATION */
+@keyframes robotWave {
+  0% { transform: rotate(0deg) translateY(0); }
+  25% { transform: rotate(4deg) translateY(-5px); }
+  50% { transform: rotate(-4deg) translateY(-8px); }
+  75% { transform: rotate(4deg) translateY(-5px); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
+
+/* 🌌 BACKGROUND ORBS */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: floatOrb 14s ease-in-out infinite;
+}
+
+.orb-orange {
+  width: 420px;
+  height: 420px;
+  background: #ff7a00;
+  top: 10%;
+  left: -120px;
+}
+
+.orb-blue {
+  width: 360px;
+  height: 360px;
+  background: #3bc9db;
+  bottom: 10%;
+  right: -120px;
+  animation-delay: 4s;
+}
+
+.orb-purple {
+  width: 300px;
+  height: 300px;
+  background: #7c3aed;
+  top: 55%;
+  left: 45%;
+  animation-delay: 7s;
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-40px) translateX(20px); }
+}
+
+/* 🧠 FUTURISTIC GRID */
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.15;
+}
+
+/* 🤖 ROBOT INTERACTION BOOST */
+.robot-wrapper:hover ~ .bg-orb {
+  opacity: 0.6;
+  filter: blur(60px);
+}
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+@keyframes fly {
+  from { transform: translateX(120vw); }
+  to { transform: translateX(-140vw); }
+}
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
