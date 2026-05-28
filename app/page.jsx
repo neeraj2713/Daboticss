@@ -1,11 +1,9 @@
 "use client";
 
 import Navbar from "./components/Navbar";
-import ProductCard from "./components/ProductCard";
 import Footer from "./components/Footer";
 import { motion } from "framer-motion";
 import PlayfulBackground from "./components/PlayfulBackground";
-import FlyingRobotWithMessage from "./components/FlyingRobotWithMessage";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 import STEMxPrograms from "./components/STEMxPrograms";
 import Achievements from "./components/Achievements";
@@ -245,101 +243,6 @@ export default function Home() {
   </div>
 </section>
 
-
-{/* 🔹 KITS (PLAYFUL & FILLED BACKGROUND) */}
-<section
-  id="kits"
-  className="
-    relative px-10 py-28
-    bg-gradient-to-b from-[#fdfefe] via-[#f4f7ff] to-[#eef2ff]
-  "
->
-  {/* 🌈 BACKGROUND DECOR */}
-  <div className="absolute inset-0 z-0">
-
-    <FlyingRobotWithMessage />
-
-    {/* ☁️ SOFT CLOUD BLOBS */}
-    <div className="absolute -top-32 left-0 w-[520px] h-[320px] bg-blue-100 rounded-full blur-3xl opacity-70" />
-    <div className="absolute top-24 right-0 w-[420px] h-[260px] bg-orange-100 rounded-full blur-3xl opacity-60" />
-    <div className="absolute bottom-0 left-1/3 w-[360px] h-[220px] bg-purple-100 rounded-full blur-3xl opacity-50" />
-
-    {/* ✈️ FLOATING PLANE BADGE */}
-    <motion.div
-      className="absolute right-10 top-28 w-24 h-24 rounded-full bg-white/85 shadow-xl flex items-center justify-center"
-      animate={{ x: [0, -220, 0], y: [0, 40, 0], rotate: [0, -8, 0] }}
-      transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
-    >
-      <span className="text-4xl">✈️</span>
-    </motion.div>
-
-    {/* ⚙️ GEAR */}
-    <motion.svg
-      className="absolute right-32 bottom-20 w-32 opacity-30"
-      viewBox="0 0 100 100"
-      animate={{ rotate: 360 }}
-      transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-    >
-      <circle cx="50" cy="50" r="22" fill="#93C5FD" />
-      {[...Array(8)].map((_, i) => (
-        <rect
-          key={i}
-          x="47"
-          y="2"
-          width="6"
-          height="16"
-          fill="#60A5FA"
-          transform={`rotate(${i * 45} 50 50)`}
-        />
-      ))}
-    </motion.svg>
-
-  </div>
-
-  {/* 🔹 FOREGROUND CONTENT */}
-  <div className="relative z-10">
-
-    <motion.h2
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-6"
-    >
-      Our Kits
-    </motion.h2>
-
-    <p className="text-center text-gray-600 mb-20 max-w-2xl mx-auto">
-      Choose the perfect kit to kickstart your child's robotics journey
-    </p>
-
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-      <ProductCard
-        title="Quarky Explorer Kit"
-        price="₹4,699"
-        image={siteImages.kits[0]}
-        rating={4.8}
-        stock={119}
-        paymentLink="https://wa.me/917818002203?text=Hi%20Dabotics%2C%20I%20want%20to%20buy%20Quarky%20Explorer%20Kit%20%28%E2%82%B94%2C699%29"
-      />
-      <ProductCard
-        title="Innovator Kit"
-        price="₹6,999"
-        image={siteImages.kits[1]}
-        rating={4.9}
-        stock={103}
-        paymentLink="https://wa.me/917818002203?text=Hi%20Dabotics%2C%20I%20want%20to%20buy%20Quarky%20Innovator%20Kit%20%28%E2%82%B96%2C999%29"
-      />
-      <ProductCard
-        title="Ultimate Kit"
-        price="₹11,199"
-        image={siteImages.kits[2]}
-        rating={5}
-        stock={97}
-        paymentLink="https://wa.me/917818002203?text=Hi%20Dabotics%2C%20I%20want%20to%20buy%20Quarky%20Ultimate%20Kit%20%28%E2%82%B911%2C199%29"
-      />
-    </div>
-
-  </div>
-</section>
 
 {/* TESTIMONIALS */}
 <section className="py-24 bg-white">

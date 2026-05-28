@@ -3,12 +3,12 @@
 import { motion } from "framer-motion";
 
 const HERO_IMAGES = [
-  "/images/lab-hero.jpg",
-  "/images/stem-robotics-lab.jpg",
-  "/images/stem-day-banner.jpg",
-  "/images/Daboticslabs.jpg",
   "/images/about-2.jpg",
-  "/images/products/product-1.jpg",
+  "/images/about-3.jpg",
+  "/images/lab-hero.jpg",
+  "/images/stem-day-banner.jpg",
+  "/images/teacher-training-day-banner.jpg",
+  "/images/call-to-action.jpg",
 ];
 
 const STATS = [
