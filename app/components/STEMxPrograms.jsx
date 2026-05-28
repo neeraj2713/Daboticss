@@ -1,49 +1,51 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { siteImages } from "../lib/siteImages";
 
 export default function STEMxPrograms() {
-    
+  const { programs: p } = siteImages;
+
   const programs = [
     {
       title: "STEM",
       desc: "Science, Technology, Engineering & Mathematics",
-      img: "/programs/stem.jpg",
+      img: p.stem,
     },
     {
       title: "Robotics",
       desc: "Build, Program & Control Robots",
-      img: "/programs/robotics.jpg",
+      img: p.robotics,
     },
     {
       title: "Drone Tech",
       desc: "Aerial Technology & UAV Systems",
-      img: "/programs/drone.jpg",
+      img: p.drone,
     },
     {
       title: "Electronics",
       desc: "Circuit Design & Microcontrollers",
-      img: "/programs/electronics.jpg",
+      img: p.electronics,
     },
     {
       title: "Coding",
       desc: "Programming & Software Development",
-      img: "/programs/coding.jpg",
+      img: p.coding,
     },
     {
       title: "Space Tech",
       desc: "Space Science & Technology",
-      img: "/programs/space.jpg",
+      img: p.space,
     },
     {
       title: "Artificial Intelligence",
       desc: "Machine Learning & Neural Networks",
-      img: "/programs/ai.jpg",
+      img: p.ai,
     },
     {
       title: "AR & VR",
       desc: "Augmented & Virtual Reality",
-      img: "/programs/arvr.jpg",
+      img: p.arvr,
     },
   ];
 

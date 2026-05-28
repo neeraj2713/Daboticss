@@ -1,14 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { siteImages } from "../lib/siteImages";
 
 export default function Achievements() {
-  const logos = [
-    { src: "/achievements/stem.png", alt: "STEM.org Accredited" },
-    { src: "/achievements/niti.png", alt: "NITI Aayog AIM" },
-    { src: "/achievements/lego.png", alt: "LEGO Education" },
-    { src: "/achievements/microsoft.png", alt: "Microsoft Qualified Academic Institution" },
-  ];
+  const logos = siteImages.achievements;
 
   return (
     <section className="relative py-28 bg-gradient-to-b from-[#f7f9fc] to-white overflow-hidden">
@@ -39,7 +35,7 @@ export default function Achievements() {
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="max-h-16 object-contain"
+                className="max-h-20 w-full object-cover rounded-xl"
               />
             </motion.div>
           ))}

@@ -1,8 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import WhatsAppFloat from "./WhatsAppFloat";
+import { siteImages } from "../lib/siteImages";
 
-export default function SchoolProgrammesSection() {
+export default function SchoolProgrammesSection({ setActive = () => {} }) {
   return (
     <div className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-black to-slate-50">
       <WhatsAppFloat />
@@ -118,6 +119,7 @@ className="flex items-center gap-3 bg-black/10 backdrop-blur-md px-5 py-3 rounde
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => setActive("reach-out")}
                 className="px-8 py-4 bg-white text-purple-600 rounded-full font-bold text-lg shadow-2xl hover:shadow-white/50 transition-all duration-300"
               >
                 Get Started Today →
@@ -129,13 +131,14 @@ className="flex items-center gap-3 bg-black/10 backdrop-blur-md px-5 py-3 rounde
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative h-[600px]"
+              className="relative"
             >
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { title: "Robotics & AI", color: "from-blue-500 to-cyan-500", icon: "🤖", pos: "top-0 left-0" },
-                { title: "STEM Labs", color: "from-purple-500 to-pink-500", icon: "🔬", pos: "top-0 right-0" },
-                { title: "Coding Classes", color: "from-orange-500 to-red-500", icon: "💻", pos: "bottom-0 left-0" },
-                { title: "Maker Space", color: "from-green-500 to-teal-500", icon: "🛠️", pos: "bottom-0 right-0" },
+                { title: "Robotics & AI", color: "from-blue-500 to-cyan-500", icon: "🤖" },
+                { title: "STEM Labs", color: "from-purple-500 to-pink-500", icon: "🔬" },
+                { title: "Coding Classes", color: "from-orange-500 to-red-500", icon: "💻" },
+                { title: "Maker Space", color: "from-green-500 to-teal-500", icon: "🛠️" },
               ].map((card, i) => (
                 <motion.div
                   key={i}
@@ -143,26 +146,27 @@ className="flex items-center gap-3 bg-black/10 backdrop-blur-md px-5 py-3 rounde
                   whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                   transition={{ delay: 0.2 * i, duration: 0.6 }}
                   whileHover={{ 
-                    scale: 1.1, 
-                    rotate: 5,
+                    scale: 1.03, 
+                    rotate: 1,
                     zIndex: 10,
                   }}
-                  className={`absolute ${card.pos} w-64 h-72 bg-gradient-to-br ${card.color} rounded-3xl p-6 shadow-2xl cursor-pointer`}
+                  className={`w-full min-h-[260px] bg-gradient-to-br ${card.color} rounded-3xl p-5 sm:p-6 shadow-2xl cursor-pointer overflow-hidden`}
                 >
-                  <div className="relative h-full flex flex-col justify-between">
-                    <div className="text-6xl mb-4">{card.icon}</div>
-                    <div>
-                      <h3 className="text-slate-900 text-2xl font-bold mb-2">
+                  <div className="relative h-full flex flex-col justify-between z-10">
+                    <div className="text-5xl sm:text-6xl mb-4 drop-shadow-lg">{card.icon}</div>
+                    <div className="pr-8">
+                      <h3 className="text-white text-3xl font-bold mb-2 leading-tight break-words">
 {card.title}</h3>
-                     <p className="text-slate-700">
+                     <p className="text-white/90 text-sm sm:text-base leading-snug">
 Comprehensive program for grades 1-12</p>
                     </div>
-                    <div className="absolute top-4 right-4 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-white font-bold">
+                    <div className="absolute top-3 right-3 w-10 h-10 bg-white/25 rounded-full flex items-center justify-center text-white text-sm font-bold leading-none shrink-0 ring-1 ring-white/30">
                       {i + 1}
                     </div>
                   </div>
                 </motion.div>
               ))}
+              </div>
             </motion.div>
           </div>
         </div>
@@ -204,16 +208,16 @@ Comprehensive program for grades 1-12</p>
           </motion.div>
 
           {/* Grade Programs */}
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid lg:grid-cols-3 gap-8 mb-16 items-stretch">
             {/* Grade 1-2 */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               whileHover={{ y: -10 }}
-              className="relative group"
+              className="relative group h-full"
             >
-             <div className="relative bg-white rounded-3xl p-8 shadow-xl border-2 border-green-200 overflow-hidden">
+             <div className="relative bg-white rounded-3xl p-8 shadow-xl border-2 border-green-200 overflow-hidden h-full min-h-[560px] flex flex-col">
   
   {/* Corner Badge */}
   <div className="absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br from-green-400 to-teal-500 rounded-full flex items-end justify-start p-8">
@@ -221,7 +225,7 @@ Comprehensive program for grades 1-12</p>
   </div>
 
   {/* CONTENT GRID */}
-  <div className="grid lg:grid-cols-2 gap-8 items-center">
+  <div className="flex-1">
 
     {/* LEFT – TEXT CONTENT */}
     <div>
@@ -235,7 +239,7 @@ Comprehensive program for grades 1-12</p>
         </p>
       </div>
 
-      <ul className="space-y-3">
+      <ul className="space-y-3 max-w-md">
         {[
           "Basic Science Concepts through Play",
           "Simple Experiments & Observations",
@@ -243,33 +247,12 @@ Comprehensive program for grades 1-12</p>
           "Story-based Learning",
           "Sensory Development Activities",
         ].map((item, i) => (
-          <li key={i} className="flex items-start gap-3 text-gray-700">
-            <span className="text-green-500 text-xl">✓</span>
-            <span>{item}</span>
+          <li key={i} className="flex items-start gap-3 text-gray-700 leading-relaxed">
+            <span className="text-green-500 text-xl leading-none mt-1">✓</span>
+            <span className="flex-1">{item}</span>
           </li>
         ))}
       </ul>
-    </div>
-
-    {/* RIGHT – VISUAL ICON GRID */}
-    <div className="grid grid-cols-2 gap-6">
-      {[
-        { icon: "🎲", title: "Learn by Playing" },
-        { icon: "🧪", title: "Simple Experiments" },
-        { icon: "📖", title: "Story Learning" },
-        { icon: "🖐️", title: "Hands-on Fun" },
-      ].map((item, i) => (
-        <motion.div
-          key={i}
-          whileHover={{ scale: 1.05 }}
-          className="bg-green-50 rounded-2xl p-6 text-center shadow-sm"
-        >
-          <div className="text-4xl mb-3">{item.icon}</div>
-          <p className="font-semibold text-gray-800 text-sm">
-            {item.title}
-          </p>
-        </motion.div>
-      ))}
     </div>
 
   </div>
@@ -283,10 +266,10 @@ Comprehensive program for grades 1-12</p>
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               whileHover={{ y: -10 }}
-              className="relative group"
+              className="relative group h-full"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
-              <div className="relative bg-white rounded-3xl p-8 shadow-xl border-2 border-blue-200 overflow-hidden">
+              <div className="relative bg-white rounded-3xl p-8 shadow-xl border-2 border-blue-200 overflow-hidden h-full min-h-[560px] flex flex-col">
                 {/* Corner Badge */}
                 <div className="absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-end justify-start p-8">
                   <span className="text-white text-2xl font-bold">3-5</span>
@@ -298,7 +281,7 @@ Comprehensive program for grades 1-12</p>
                   <p className="text-blue-600 font-semibold text-lg">Exploratory Learning</p>
                 </div>
 
-                <ul className="space-y-3">
+                <ul className="space-y-3 flex-1">
                   {[
                     "Introduction to Robotics",
                     "Basic Programming Concepts",
@@ -327,10 +310,10 @@ Comprehensive program for grades 1-12</p>
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               whileHover={{ y: -10 }}
-              className="relative group"
+              className="relative group h-full"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-red-500 rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
-              <div className="relative bg-white rounded-3xl p-8 shadow-xl border-2 border-orange-200 overflow-hidden">
+              <div className="relative bg-white rounded-3xl p-8 shadow-xl border-2 border-orange-200 overflow-hidden h-full min-h-[560px] flex flex-col">
                 {/* Corner Badge */}
                 <div className="absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-end justify-start p-8">
                   <span className="text-white text-xl font-bold">6-10</span>
@@ -342,7 +325,7 @@ Comprehensive program for grades 1-12</p>
                   <p className="text-orange-600 font-semibold text-lg">Advanced Applications</p>
                 </div>
 
-                <ul className="space-y-3">
+                <ul className="space-y-3 flex-1">
                   {[
                     "Advanced Robotics & AI",
                     "Programming & App Development",
@@ -458,7 +441,7 @@ Comprehensive program for grades 1-12</p>
               {
                 title: "3D PRINTING WORKSHOPS",
                 grade: "Grade 1 - 12",
-                image: "🖨️",
+                photo: siteImages.schoolProgrammes.workshops[0].image,
                 desc: "Learn the fundamentals of 3D printing and create your own designs.",
                 highlights: ["Designing", "Printing", "Prototyping"],
                 color: "from-cyan-400 to-blue-500",
@@ -466,7 +449,7 @@ Comprehensive program for grades 1-12</p>
               {
                 title: "ROBOTICS BOOTCAMP",
                 grade: "Grade 5 - 12",
-                image: "🤖",
+                photo: siteImages.schoolProgrammes.workshops[1].image,
                 desc: "Build and program robots from scratch using industry-standard tools.",
                 highlights: ["Building", "Coding", "Competing"],
                 color: "from-purple-400 to-pink-500",
@@ -474,7 +457,7 @@ Comprehensive program for grades 1-12</p>
               {
                 title: "AI & MACHINE LEARNING",
                 grade: "Grade 8 - 12",
-                image: "🧠",
+                photo: siteImages.schoolProgrammes.workshops[2].image,
                 desc: "Explore artificial intelligence and create smart applications.",
                 highlights: ["ML Models", "Data Science", "Neural Networks"],
                 color: "from-orange-400 to-red-500",
@@ -482,7 +465,7 @@ Comprehensive program for grades 1-12</p>
               {
                 title: "DRONE TECHNOLOGY",
                 grade: "Grade 6 - 12",
-                image: "🚁",
+                photo: siteImages.schoolProgrammes.workshops[3].image,
                 desc: "Learn drone assembly, programming, and autonomous flight.",
                 highlights: ["Assembly", "Programming", "Flight Training"],
                 color: "from-green-400 to-teal-500",
@@ -490,7 +473,7 @@ Comprehensive program for grades 1-12</p>
               {
                 title: "IoT WORKSHOP",
                 grade: "Grade 7 - 12",
-                image: "📡",
+                photo: siteImages.schoolProgrammes.workshops[4].image,
                 desc: "Create smart devices and connect them to the internet.",
                 highlights: ["Sensors", "Connectivity", "Smart Homes"],
                 color: "from-yellow-400 to-orange-500",
@@ -498,7 +481,7 @@ Comprehensive program for grades 1-12</p>
               {
                 title: "GAME DEVELOPMENT",
                 grade: "Grade 5 - 12",
-                image: "🎮",
+                photo: siteImages.schoolProgrammes.workshops[5].image,
                 desc: "Design and develop your own video games and interactive experiences.",
                 highlights: ["Game Design", "Unity", "Publishing"],
                 color: "from-indigo-400 to-purple-500",
@@ -510,19 +493,19 @@ Comprehensive program for grades 1-12</p>
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="relative group"
+                className="relative group h-full"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${workshop.color} rounded-3xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity`} />
-                <div className="relative bg-white rounded-3xl shadow-2xl">
+                <div className="relative bg-white rounded-3xl shadow-2xl border border-white/80 overflow-hidden h-full flex flex-col">
 
                   {/* Image Section */}
-                  <div className={`h-48 bg-gradient-to-br ${workshop.color} flex items-center justify-center relative overflow-hidden`}>
-                    <motion.div
-                      whileHover={{ scale: 1.2, rotate: 10 }}
-                      className="text-8xl"
-                    >
-                      {workshop.image}
-                    </motion.div>
+                  <div className={`h-48 bg-gradient-to-br ${workshop.color} relative overflow-hidden border-b border-white/80`}>
+                    <img
+                      src={workshop.photo}
+                      alt={workshop.title}
+                      className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${workshop.color} opacity-70`} />
                    <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full text-sm font-semibold text-gray-700">
   {workshop.grade}
 </div>
@@ -530,7 +513,7 @@ Comprehensive program for grades 1-12</p>
                   </div>
 
                   {/* Content Section */}
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-1">
                     <h3 className="text-2xl font-bold text-gray-800 mb-3">
                       {workshop.title}
                     </h3>
@@ -551,7 +534,7 @@ Comprehensive program for grades 1-12</p>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className={`w-full py-3 bg-gradient-to-r ${workshop.color} text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all`}
+                      className={`w-full py-3 bg-gradient-to-r ${workshop.color} text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all mt-auto`}
                     >
                       Learn More →
                     </motion.button>
@@ -564,7 +547,7 @@ Comprehensive program for grades 1-12</p>
       </section>
 
       {/* ================= COMPREHENSIVE TRAINING & SUPPORT ================= */}
-    <section className="relative py-20 mt-32 overflow-hidden">
+    <section className="relative py-20 overflow-hidden">
 
         {/* 🔵 BACKGROUND */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900" />
@@ -737,7 +720,7 @@ Comprehensive program for grades 1-12</p>
           </div>
 
           {/* Support Features Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-32">
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
 
             {[
               {
@@ -788,7 +771,7 @@ Comprehensive program for grades 1-12</p>
       </section>
 
       {/* ================= CALL TO ACTION ================= */}
-     <section className="relative py-20 mt-32 overflow-hidden">
+     <section className="relative py-20 overflow-hidden">
 
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600" />
         <motion.div
@@ -823,18 +806,19 @@ Comprehensive program for grades 1-12</p>
               comprehensive STEM programs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a
-  href="#request-demo"
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-  className="px-8 py-4 bg-white text-purple-600 rounded-full font-bold text-lg shadow-2xl"
->
-  Schedule a Demo
-</motion.a>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setActive("reach-out")}
+                className="px-8 py-4 bg-white text-purple-600 rounded-full font-bold text-lg shadow-2xl"
+              >
+                Register Your School
+              </motion.button>
 
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => setActive("reach-out")}
                 className="px-8 py-4 bg-white border-white text-black rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all"
               >
                 Download Brochure

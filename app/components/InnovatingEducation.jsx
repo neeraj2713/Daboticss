@@ -2,14 +2,9 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { siteImages } from "../lib/siteImages";
 
-const images = [
-  "/orange-robot-using-laptop-busy-classroom-focused-children-technology-education-integration-modern-learning-328071515.svg",
-  "/Image-2.svg",
-  "/article-16.svg",
-  "/innovating/4.jpg",
-  "/innovating/5.jpg",
-];
+const images = siteImages.innovatingSlider;
 
 export default function InnovatingEducation() {
   const [index, setIndex] = useState(0);

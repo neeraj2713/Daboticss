@@ -1,8 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { siteImages } from "../lib/siteImages";
 
-export default function RoboticsAICompetitions() {
+export default function RoboticsAICompetitions({ setActive = () => {} }) {
   const [activeTab, setActiveTab] = useState("overview");
 
   // Animation variants
@@ -30,7 +31,7 @@ export default function RoboticsAICompetitions() {
       title: "World Robot Olympiad (WRO)",
       age: "Ages 8-19",
       description: "International STEM and robotics competition with categories including RoboMission, Future Innovators, RoboSports, and Future Engineers",
-      image: "/competitions/wro.jpg",
+      image: siteImages.competitions.wro,
       categories: ["RoboMission", "Future Innovators", "RoboSports", "Future Engineers"],
       gradient: "from-blue-500 to-cyan-500"
     },
@@ -38,7 +39,7 @@ export default function RoboticsAICompetitions() {
       title: "FIRST LEGO League",
       age: "Ages 4-16",
       description: "Theme-based international competition with divisions: Discover, Explore, and Challenge. Build creativity with LEGO and robotics",
-      image: "/competitions/fll.jpg",
+      image: siteImages.competitions.fll,
       categories: ["Discover (4-6)", "Explore (6-10)", "Challenge (9-16)"],
       gradient: "from-red-500 to-orange-500"
     },
@@ -46,7 +47,7 @@ export default function RoboticsAICompetitions() {
       title: "VEX Robotics Competition",
       age: "Ages 8-18",
       description: "World's largest robotics program with game-based engineering challenges. Includes VEX IQ and VEX V5 platforms",
-      image: "/competitions/vex.jpg",
+      image: siteImages.competitions.vex,
       categories: ["VEX IQ", "VEX V5", "Robot Skills", "Teamwork Challenge"],
       gradient: "from-purple-500 to-pink-500"
     },
@@ -54,7 +55,7 @@ export default function RoboticsAICompetitions() {
       title: "STEAM Innovation League",
       age: "Grades 1-12",
       description: "Global competition showcasing skills in STEAM, AI, Robotics, and Coding with focus on UN Sustainable Development Goals",
-      image: "/competitions/sil.jpg",
+      image: siteImages.competitions.sil,
       categories: ["Innovation Projects", "AI Solutions", "IoT Applications", "SDG Focus"],
       gradient: "from-green-500 to-teal-500"
     },
@@ -62,7 +63,7 @@ export default function RoboticsAICompetitions() {
       title: "National Robotics Championship",
       age: "All Ages",
       description: "India's premier platform featuring Robo Race, Robo Sumo, Drone Challenge, and Working Model exhibitions",
-      image: "/competitions/nrc.jpg",
+      image: siteImages.competitions.nrc,
       categories: ["Robo Race", "Robo Sumo", "Drone Challenge", "Exhibitions"],
       gradient: "from-yellow-500 to-orange-500"
     },
@@ -70,7 +71,7 @@ export default function RoboticsAICompetitions() {
       title: "AI & IoT Challenge",
       age: "Ages 9-14",
       description: "Industry 4.0 focused competition integrating AI, IoT, robotics, and data science for smart manufacturing",
-      image: "/competitions/iot.jpg",
+      image: siteImages.competitions.iot,
       categories: ["Smart Manufacturing", "AI Integration", "IoT Solutions", "Data Science"],
       gradient: "from-indigo-500 to-blue-500"
     }
@@ -179,14 +180,7 @@ export default function RoboticsAICompetitions() {
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
               <motion.button 
-                className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg transition-all"
-                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(251, 146, 60, 0.3)" }}
-                whileTap={{ scale: 0.95 }}
-              >
-                ▶ Watch Video
-              </motion.button>
-
-              <motion.button 
+                onClick={() => setActive("reach-out")}
                 className="border-2 border-blue-500 text-blue-500 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -209,12 +203,7 @@ export default function RoboticsAICompetitions() {
             className="relative flex justify-center"
           >
             <div className="grid grid-cols-2 gap-8">
-              {[
-                "/competitions/c1.jpg",
-                "/competitions/c2.jpg",
-                "/competitions/c3.jpg",
-                "/competitions/c4.jpg",
-              ].map((img, i) => (
+              {siteImages.competitions.gallery.map((img, i) => (
                 <motion.div
                   key={i}
                   variants={fadeInUp}
@@ -336,9 +325,6 @@ export default function RoboticsAICompetitions() {
                     ))}
                   </div>
 
-                  <button className="text-blue-600 font-semibold hover:text-blue-700 transition-colors">
-                    Learn More →
-                  </button>
                 </div>
               </motion.div>
             ))}

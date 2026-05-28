@@ -1,7 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
+import { siteImages } from "../lib/siteImages";
 
-export default function OnlineProgramsSection() {
+export default function OnlineProgramsSection({ setActive = () => {} }) {
   return (
     <div className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50">
 
@@ -107,6 +108,11 @@ export default function OnlineProgramsSection() {
 
               <div className="flex flex-wrap gap-4">
                 <motion.button
+                  onClick={() =>
+                    document
+                      .getElementById("online-courses")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-4 bg-white text-blue-600 rounded-full font-bold text-lg shadow-2xl hover:shadow-white/50 transition-all duration-300"
@@ -115,6 +121,7 @@ export default function OnlineProgramsSection() {
                 </motion.button>
 
                 <motion.button
+                  onClick={() => setActive("reach-out")}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-4 border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300"
@@ -129,13 +136,14 @@ export default function OnlineProgramsSection() {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative h-[600px]"
+              className="relative"
             >
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { title: "Live Classes", subtitle: "1:1 & Group Sessions", color: "from-cyan-500 to-blue-500", icon: "🎥", pos: "top-0 left-0" },
-                { title: "Self-Paced", subtitle: "Learn at Your Speed", color: "from-purple-500 to-pink-500", icon: "⏱️", pos: "top-0 right-0" },
-                { title: "Hybrid", subtitle: "Online + Offline", color: "from-green-500 to-teal-500", icon: "🔄", pos: "bottom-0 left-0" },
-                { title: "Bootcamps", subtitle: "Intensive Programs", color: "from-orange-500 to-red-500", icon: "⚡", pos: "bottom-0 right-0" },
+                { title: "Live Classes", subtitle: "1:1 & Group Sessions", color: "from-cyan-500 to-blue-500", icon: "🎥" },
+                { title: "Self-Paced", subtitle: "Learn at Your Speed", color: "from-purple-500 to-pink-500", icon: "⏱️" },
+                { title: "Hybrid", subtitle: "Online + Offline", color: "from-green-500 to-teal-500", icon: "🔄" },
+                { title: "Bootcamps", subtitle: "Intensive Programs", color: "from-orange-500 to-red-500", icon: "⚡" },
               ].map((card, i) => (
                 <motion.div
                   key={i}
@@ -143,35 +151,36 @@ export default function OnlineProgramsSection() {
                   whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
                   transition={{ delay: 0.2 * i, duration: 0.6 }}
                   whileHover={{
-                    scale: 1.1,
-                    rotate: 5,
+                    scale: 1.03,
+                    rotate: 1,
                     zIndex: 10,
                   }}
-                  className={`absolute ${card.pos} w-64 h-72 bg-gradient-to-br ${card.color} rounded-3xl p-6 shadow-2xl cursor-pointer`}
+                  className={`w-full min-h-[260px] bg-gradient-to-br ${card.color} rounded-3xl p-5 sm:p-6 shadow-2xl cursor-pointer overflow-hidden`}
                 >
-                  <div className="relative h-full flex flex-col justify-between">
-                    <div className="text-6xl mb-4">{card.icon}</div>
-                    <div>
-                      <h3 className="text-white text-3xl font-bold mb-1">
+                  <div className="relative h-full flex flex-col justify-between z-10">
+                    <div className="text-5xl sm:text-6xl mb-4 drop-shadow-lg">{card.icon}</div>
+                    <div className="pr-8">
+                      <h3 className="text-white text-3xl font-bold mb-1 leading-tight break-words">
                         {card.title}
                       </h3>
-                      <p className="text-white/80 text-sm">
+                      <p className="text-white/90 text-sm sm:text-base leading-snug">
                         {card.subtitle}
                       </p>
                     </div>
-                    <div className="absolute top-4 right-4 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-white font-bold">
+                    <div className="absolute top-3 right-3 w-10 h-10 bg-white/25 rounded-full flex items-center justify-center text-white text-sm font-bold leading-none shrink-0 ring-1 ring-white/30">
                       {i + 1}
                     </div>
                   </div>
                 </motion.div>
               ))}
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* ================= ONLINE COURSE CATEGORIES ================= */}
-      <section className="relative py-20 overflow-hidden">
+      <section id="online-courses" className="relative py-20 overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
 
@@ -206,7 +215,7 @@ export default function OnlineProgramsSection() {
               {
                 title: "Coding for Kids",
                 age: "Ages 6-10",
-                icon: "💻",
+                photo: siteImages.onlinePrograms.courses[0].image,
                 duration: "12 Weeks",
                 sessions: "24 Live Sessions",
                 description: "Introduction to coding using Scratch, block-based programming, game development, and creative animations.",
@@ -216,7 +225,7 @@ export default function OnlineProgramsSection() {
               {
                 title: "Python Programming",
                 age: "Ages 10-14",
-                icon: "🐍",
+                photo: siteImages.onlinePrograms.courses[1].image,
                 duration: "16 Weeks",
                 sessions: "32 Live Sessions",
                 description: "Master Python fundamentals, data structures, algorithms, and build real-world applications.",
@@ -226,7 +235,7 @@ export default function OnlineProgramsSection() {
               {
                 title: "Robotics Online",
                 age: "Ages 8-14",
-                icon: "🤖",
+                photo: siteImages.onlinePrograms.courses[2].image,
                 duration: "20 Weeks",
                 sessions: "40 Live Sessions",
                 description: "Build and program robots remotely with Arduino, sensors, motors using our specially designed online kits.",
@@ -236,7 +245,7 @@ export default function OnlineProgramsSection() {
               {
                 title: "Web Development",
                 age: "Ages 12-16",
-                icon: "🌐",
+                photo: siteImages.onlinePrograms.courses[3].image,
                 duration: "16 Weeks",
                 sessions: "32 Live Sessions",
                 description: "Learn HTML, CSS, JavaScript and create responsive websites and web applications from scratch.",
@@ -246,7 +255,7 @@ export default function OnlineProgramsSection() {
               {
                 title: "AI & Machine Learning",
                 age: "Ages 14-18",
-                icon: "🧠",
+                photo: siteImages.onlinePrograms.courses[4].image,
                 duration: "24 Weeks",
                 sessions: "48 Live Sessions",
                 description: "Explore artificial intelligence, machine learning models, neural networks, and data science.",
@@ -256,7 +265,7 @@ export default function OnlineProgramsSection() {
               {
                 title: "App Development",
                 age: "Ages 12-18",
-                icon: "📱",
+                photo: siteImages.onlinePrograms.courses[5].image,
                 duration: "20 Weeks",
                 sessions: "40 Live Sessions",
                 description: "Create mobile apps for Android and iOS using MIT App Inventor and advanced frameworks.",
@@ -275,13 +284,13 @@ export default function OnlineProgramsSection() {
                 <div className={`absolute inset-0 bg-gradient-to-br ${course.color} rounded-3xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity`} />
                 <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
                   {/* Header */}
-                  <div className={`h-48 bg-gradient-to-br ${course.color} flex items-center justify-center relative overflow-hidden`}>
-                    <motion.div
-                      whileHover={{ scale: 1.2, rotate: 10 }}
-                      className="text-8xl"
-                    >
-                      {course.icon}
-                    </motion.div>
+                  <div className={`h-48 bg-gradient-to-br ${course.color} relative overflow-hidden`}>
+                    <img
+                      src={course.photo}
+                      alt={course.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${course.color} opacity-75`} />
                     <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
                       <span className="font-bold text-gray-700">{course.age}</span>
                     </div>
@@ -319,13 +328,6 @@ export default function OnlineProgramsSection() {
                       </div>
                     </div>
 
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`w-full py-3 bg-gradient-to-r ${course.color} text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all`}
-                    >
-                      Enroll Now →
-                    </motion.button>
                   </div>
                 </div>
               </motion.div>
@@ -661,6 +663,7 @@ export default function OnlineProgramsSection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
+                onClick={() => setActive("reach-out")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-10 py-5 bg-white text-blue-600 rounded-full font-bold text-lg shadow-2xl"
@@ -669,6 +672,11 @@ export default function OnlineProgramsSection() {
               </motion.button>
 
               <motion.button
+                onClick={() =>
+                  document
+                    .getElementById("online-courses")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-10 py-5 border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all"

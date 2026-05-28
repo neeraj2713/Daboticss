@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { siteImages } from "../lib/siteImages";
 
 export default function AboutDabotics() {
   return (
@@ -23,28 +24,39 @@ export default function AboutDabotics() {
         />
       </svg>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+      <div className="relative z-10 max-w-7xl mx-auto px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="rounded-3xl overflow-hidden shadow-2xl"
+          >
+            <img
+              src={siteImages.about.main}
+              alt="Dabotics STEM and robotics lab"
+              className="w-full h-[420px] object-cover"
+            />
+          </motion.div>
 
-        {/* LEFT CONTENT */}
-        <div>
-          <h2 className="text-5xl font-extrabold text-gray-900 mb-6">
-            About <span className="text-orange-500">Us</span>
-          </h2>
+          <div>
+            <h2 className="text-5xl font-extrabold text-gray-900 mb-6">
+              About <span className="text-orange-500">Us</span>
+            </h2>
 
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Dabotics India is an education-focused technology company dedicated
-            to transforming how students learn STEM in the 21st century.
-          </p>
+            <p className="text-gray-600 text-lg leading-relaxed mb-6">
+              Dabotics India is an education-focused technology company dedicated
+              to transforming how students learn STEM in the 21st century.
+            </p>
 
-          <p className="text-gray-600 text-lg leading-relaxed">
-            We partner with schools to deliver hands-on programs in Robotics,
-            AI, Coding, Electronics, and Innovation Labs — empowering students
-            with creativity, confidence, and real-world problem-solving skills.
-          </p>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              We partner with schools to deliver hands-on programs in Robotics,
+              AI, Coding, Electronics, and Innovation Labs — empowering students
+              with creativity, confidence, and real-world problem-solving skills.
+            </p>
+          </div>
         </div>
 
-        {/* RIGHT CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
               title: "Industry Leaders",
