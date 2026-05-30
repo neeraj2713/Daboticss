@@ -123,7 +123,7 @@ export default function HeroSection({ setActive }) {
       </div>
 
       {/* Original circular image cluster */}
-      <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden md:grid grid-cols-2 gap-7 z-10 lg:right-16">
+      <div className="absolute right-2 top-1/2 -translate-y-1/2 hidden md:grid grid-cols-2 gap-8 z-10 lg:right-8">
         {HERO_IMAGES.map((img, i) => (
           <motion.div
             key={img}
@@ -131,7 +131,7 @@ export default function HeroSection({ setActive }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.25 + i * 0.08, duration: 0.45 }}
             whileHover={{ y: -8, scale: 1.06 }}
-            className="w-32 h-32 lg:w-36 lg:h-36 rounded-full bg-white shadow-2xl overflow-hidden"
+            className="w-40 h-40 lg:w-48 lg:h-48 rounded-full bg-white shadow-2xl overflow-hidden"
           >
             <motion.img
               src={img}
