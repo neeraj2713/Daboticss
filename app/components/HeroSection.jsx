@@ -20,9 +20,9 @@ const STATS = [
 
 export default function HeroSection({ setActive }) {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#fdfefe] via-[#f1f5ff] to-[#eef2ff] px-6 py-20 lg:px-10 lg:py-24">
+    <main className="relative overflow-hidden bg-gradient-to-br from-[#fdfefe] via-[#f1f5ff] to-[#eef2ff] px-4 py-14 sm:px-6 sm:py-16 lg:min-h-screen lg:px-10 lg:py-24">
       {/* Original right curved panel */}
-      <div className="absolute top-0 right-0 h-full w-[58%] bg-orange-500 rounded-bl-[320px] z-0 overflow-hidden">
+      <div className="absolute top-0 right-0 h-full w-[58%] bg-orange-500 rounded-bl-[320px] z-0 overflow-hidden hidden md:block">
         <svg
           className="absolute left-0 top-0 h-full w-[180px]"
           viewBox="0 0 200 1000"
@@ -46,7 +46,7 @@ export default function HeroSection({ setActive }) {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-6 text-5xl font-extrabold text-gray-900 md:text-6xl"
+            className="mb-5 text-4xl font-extrabold text-gray-900 sm:text-5xl md:text-6xl"
           >
             Learn. Play. <br />
             <span className="text-orange-500">Build.</span>
@@ -56,7 +56,7 @@ export default function HeroSection({ setActive }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-8 max-w-lg text-lg leading-relaxed text-gray-600"
+            className="mb-7 max-w-lg text-base sm:text-lg leading-relaxed text-gray-600"
           >
             Fun Robotics, Coding & AI programs designed especially for kids with
             hands-on learning and creativity.
@@ -70,17 +70,15 @@ export default function HeroSection({ setActive }) {
           >
             <button
               type="button"
-              onClick={() =>
-                document.getElementById("kits")?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="rounded-full bg-orange-500 px-8 py-4 font-semibold text-white shadow-lg transition hover:bg-orange-600"
+              onClick={() => setActive("shop")}
+              className="rounded-full bg-orange-500 px-6 py-3 sm:px-8 sm:py-4 font-semibold text-white shadow-lg transition hover:bg-orange-600"
             >
               Explore Kits
             </button>
             <button
               type="button"
               onClick={() => setActive("demo-for-schools")}
-              className="rounded-full border-2 border-blue-500 px-8 py-4 font-semibold text-blue-500 transition hover:bg-blue-50"
+              className="rounded-full border-2 border-blue-500 px-6 py-3 sm:px-8 sm:py-4 font-semibold text-blue-500 transition hover:bg-blue-50"
             >
               Request Demo →
             </button>
@@ -90,7 +88,7 @@ export default function HeroSection({ setActive }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.25, duration: 0.4 }}
-            className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4 max-w-2xl"
+            className="mt-10 sm:mt-14 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 max-w-2xl"
           >
             {STATS.map((item, i) => (
               <motion.div

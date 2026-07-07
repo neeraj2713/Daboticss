@@ -18,8 +18,8 @@ export default function Footer({ setActive = () => {} }) {
   };
 
   return (
-    <footer className="relative bg-gradient-to-br from-[#0b132b] via-[#0f1f3d] to-[#102a54] text-white pt-20">
-      <div className="max-w-7xl mx-auto px-10 grid grid-cols-1 md:grid-cols-3 gap-14">
+    <footer className="relative bg-gradient-to-br from-[#0b132b] via-[#0f1f3d] to-[#102a54] text-white pt-14 sm:pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14">
         <div>
           <h3 className="text-xl font-bold text-orange-500 mb-6">
             Get In Touch

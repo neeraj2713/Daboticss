@@ -45,7 +45,7 @@ export default function Home() {
       <Navbar active={activeSection} setActive={setActiveSection} />
 
       {/* spacing for fixed navbar */}
-      <div className="h-[80px]" />
+      <div className="h-[72px] md:h-[128px]" />
 
       {activeSection === "shop" && <ShopPage />}
 

@@ -9,7 +9,7 @@ export default function SchoolProgrammesSection({ setActive = () => {} }) {
       <WhatsAppFloat />
 
       {/* ================= SCHOOL PROGRAMMES HERO ================= */}
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden py-8 sm:py-0">
         {/* 🔵 ANIMATED BACKGROUND GRADIENT */}
      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900 opacity-95" />
 
@@ -41,8 +41,8 @@ export default function SchoolProgrammesSection({ setActive = () => {} }) {
             key={i}
             className="absolute w-2 h-2 bg-white rounded-full opacity-20"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: typeof window !== "undefined" ? Math.random() * window.innerWidth : Math.random() * 1000,
+              y: typeof window !== "undefined" ? Math.random() * window.innerHeight : Math.random() * 800,
             }}
             animate={{
               y: [0, -30, 0],
@@ -58,7 +58,7 @@ export default function SchoolProgrammesSection({ setActive = () => {} }) {
         ))}
 
         {/* 🔹 CONTENT CONTAINER */}
-        <div className="relative z-10 container mx-auto px-6 py-20">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 py-14 sm:py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* LEFT CONTENT */}
             <motion.div
@@ -76,7 +76,7 @@ export default function SchoolProgrammesSection({ setActive = () => {} }) {
                 🚀 Future-Ready Education
               </motion.div>
 
-             <h1 className="text-5xl font-bold text-slate-900">
+             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
 
 
                 Transforming Schools into{" "}
@@ -86,7 +86,7 @@ export default function SchoolProgrammesSection({ setActive = () => {} }) {
                 </span>
               </h1>
 
-         <p className="text-xl lg:text-2xl mb-8 text-black leading-relaxed">
+         <p className="text-base sm:text-lg lg:text-2xl mb-8 text-black leading-relaxed">
 
   End-to-end STEM, Robotics, AI & Maker Space programs designed to
   help schools build future-ready learners aligned with NEP 2020 and
@@ -120,7 +120,7 @@ className="flex items-center gap-3 bg-black/10 backdrop-blur-md px-5 py-3 rounde
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActive("reach-out")}
-                className="px-8 py-4 bg-white text-purple-600 rounded-full font-bold text-lg shadow-2xl hover:shadow-white/50 transition-all duration-300"
+                className="px-6 py-3 sm:px-8 sm:py-4 bg-white text-purple-600 rounded-full font-bold text-base sm:text-lg shadow-2xl hover:shadow-white/50 transition-all duration-300"
               >
                 Get Started Today →
               </motion.button>
@@ -181,7 +181,7 @@ Comprehensive program for grades 1-12</p>
         <div className="absolute top-0 left-0 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
 
-        <div className="relative z-10 container mx-auto px-6">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -197,7 +197,7 @@ Comprehensive program for grades 1-12</p>
             >
               ✨ Our Programs
             </motion.div>
-            <h2 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 text-transparent bg-clip-text">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 text-transparent bg-clip-text">
               Comprehensive STEM Programs
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -400,7 +400,7 @@ Comprehensive program for grades 1-12</p>
       </section>
 
       {/* ================= WORKSHOPS SECTION ================= */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-16 sm:py-20 overflow-hidden">
         {/* 🔵 VIBRANT BACKGROUND */}
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 via-blue-600 to-purple-700" />
         
@@ -422,13 +422,13 @@ Comprehensive program for grades 1-12</p>
           }}
         />
 
-        <div className="relative z-10 container mx-auto px-6">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl lg:text-6xl font-bold text-black mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-black mb-6">
               Specialized Workshops
             </h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
@@ -547,7 +547,7 @@ Comprehensive program for grades 1-12</p>
       </section>
 
       {/* ================= COMPREHENSIVE TRAINING & SUPPORT ================= */}
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-16 sm:py-20 overflow-hidden">
 
         {/* 🔵 BACKGROUND */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900" />
@@ -562,7 +562,7 @@ Comprehensive program for grades 1-12</p>
           }}
         />
 
-        <div className="relative z-10 container mx-auto px-6">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -576,7 +576,7 @@ Comprehensive program for grades 1-12</p>
             >
               🎓 Training & Support
             </motion.div>
-            <h2 className="text-5xl lg:text-6xl font-bold text-black mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-black mb-6">
               Comprehensive Training & Support
             </h2>
             <p className="text-xl text-purple-200 max-w-3xl mx-auto">
@@ -594,7 +594,7 @@ Comprehensive program for grades 1-12</p>
               transition={{ duration: 0.8 }}
             >
               <div className="mb-8">
-                <h3 className="text-5xl font-bold text-black mb-2">
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-2">
                   Teacher Training Programs
                 </h3>
                 <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full" />
@@ -660,7 +660,7 @@ Comprehensive program for grades 1-12</p>
               transition={{ duration: 0.8 }}
             >
               <div className="mb-8">
-                <h3 className="text-5xl font-bold text-black mb-2">
+                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black mb-2">
                   Ongoing Support Services
                 </h3>
                 <div className="w-20 h-1 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full" />
@@ -771,7 +771,7 @@ Comprehensive program for grades 1-12</p>
       </section>
 
       {/* ================= CALL TO ACTION ================= */}
-     <section className="relative py-20 overflow-hidden">
+     <section className="relative py-16 sm:py-20 overflow-hidden">
 
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600" />
         <motion.div
@@ -790,13 +790,13 @@ Comprehensive program for grades 1-12</p>
           }}
         />
 
-        <div className="relative z-10 container mx-auto px-6 text-center">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl lg:text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-slate-900 mb-6">
   Ready to Transform Your School?
 </h2>
 
@@ -810,7 +810,7 @@ Comprehensive program for grades 1-12</p>
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActive("reach-out")}
-                className="px-8 py-4 bg-white text-purple-600 rounded-full font-bold text-lg shadow-2xl"
+                className="px-6 py-3 sm:px-8 sm:py-4 bg-white text-purple-600 rounded-full font-bold text-base sm:text-lg shadow-2xl"
               >
                 Register Your School
               </motion.button>
@@ -819,7 +819,7 @@ Comprehensive program for grades 1-12</p>
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActive("reach-out")}
-                className="px-8 py-4 bg-white border-white text-black rounded-full font-bold text-lg hover:bg-white hover:text-purple-600 transition-all"
+                className="px-6 py-3 sm:px-8 sm:py-4 bg-white border-white text-black rounded-full font-bold text-base sm:text-lg hover:bg-white hover:text-purple-600 transition-all"
               >
                 Download Brochure
               </motion.button>
@@ -831,11 +831,11 @@ Comprehensive program for grades 1-12</p>
   id="request-demo"
   className="bg-[#f7f9fc] py-28"
 >
-  <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
+  <div className="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
 
     {/* LEFT CONTENT */}
     <div>
-      <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
         Transform Your School’s <br /> Future
       </h2>
 

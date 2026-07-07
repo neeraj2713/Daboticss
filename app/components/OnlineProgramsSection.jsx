@@ -7,7 +7,7 @@ export default function OnlineProgramsSection({ setActive = () => {} }) {
     <div className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50">
 
       {/* ================= ONLINE PROGRAMS HERO ================= */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden py-8 sm:py-0">
         {/* 🔵 ANIMATED BACKGROUND GRADIENT */}
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-900 via-blue-900 to-indigo-900 opacity-95" />
 
@@ -53,7 +53,7 @@ export default function OnlineProgramsSection({ setActive = () => {} }) {
         ))}
 
         {/* 🔹 CONTENT CONTAINER */}
-        <div className="relative z-10 container mx-auto px-6 py-20">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 py-14 sm:py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* LEFT CONTENT */}
             <motion.div
@@ -71,14 +71,14 @@ export default function OnlineProgramsSection({ setActive = () => {} }) {
                 💻 Online STEM Programs
               </motion.div>
 
-              <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-7xl font-bold mb-6 leading-tight">
                 Learn from <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
                   Anywhere, Anytime
                 </span>
               </h1>
 
-              <p className="text-xl lg:text-2xl mb-8 text-white/90 leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-2xl mb-8 text-white/90 leading-relaxed">
                 Interactive live online STEM classes with expert instructors.
                 Robotics, coding, AI, and maker skills delivered to your home
                 with hands-on kits and virtual labs.
@@ -115,7 +115,7 @@ export default function OnlineProgramsSection({ setActive = () => {} }) {
                   }
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-white text-blue-600 rounded-full font-bold text-lg shadow-2xl hover:shadow-white/50 transition-all duration-300"
+                  className="px-6 py-3 sm:px-8 sm:py-4 bg-white text-blue-600 rounded-full font-bold text-base sm:text-lg shadow-2xl hover:shadow-white/50 transition-all duration-300"
                 >
                   Explore Courses →
                 </motion.button>
@@ -124,7 +124,7 @@ export default function OnlineProgramsSection({ setActive = () => {} }) {
                   onClick={() => setActive("reach-out")}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300"
+                  className="px-6 py-3 sm:px-8 sm:py-4 border-2 border-white text-white rounded-full font-bold text-base sm:text-lg hover:bg-white/10 transition-all duration-300"
                 >
                   Book Free Trial
                 </motion.button>
@@ -184,7 +184,7 @@ export default function OnlineProgramsSection({ setActive = () => {} }) {
         <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
 
-        <div className="relative z-10 container mx-auto px-6">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -200,7 +200,7 @@ export default function OnlineProgramsSection({ setActive = () => {} }) {
             >
               ⭐ Popular Online Courses
             </motion.div>
-            <h2 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-600 to-blue-600 text-transparent bg-clip-text">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-600 to-blue-600 text-transparent bg-clip-text">
               Choose Your Learning Path
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -338,13 +338,13 @@ export default function OnlineProgramsSection({ setActive = () => {} }) {
 
       {/* ================= LEARNING FORMATS ================= */}
       <section className="relative py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-cyan-600 text-transparent bg-clip-text">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-cyan-600 text-transparent bg-clip-text">
               Flexible Learning Formats
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -418,13 +418,13 @@ export default function OnlineProgramsSection({ setActive = () => {} }) {
       <section className="relative py-20 overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20" />
 
-        <div className="relative z-10 container mx-auto px-6">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-600 to-blue-600 text-transparent bg-clip-text">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-600 to-blue-600 text-transparent bg-clip-text">
               Why Choose Online Learning?
             </h2>
           </motion.div>
@@ -483,13 +483,13 @@ export default function OnlineProgramsSection({ setActive = () => {} }) {
 
       {/* ================= HOW IT WORKS ================= */}
       <section className="relative py-20 bg-gradient-to-br from-cyan-50 to-blue-50">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
               How Online Learning Works
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -554,13 +554,13 @@ export default function OnlineProgramsSection({ setActive = () => {} }) {
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900" />
         
-        <div className="relative z-10 container mx-auto px-6">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl lg:text-6xl font-bold mb-6 text-white">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 text-white">
               Student Success Stories
             </h2>
             <p className="text-xl text-blue-200 max-w-3xl mx-auto">
@@ -647,13 +647,13 @@ export default function OnlineProgramsSection({ setActive = () => {} }) {
           }}
         />
 
-        <div className="relative z-10 container mx-auto px-6 text-center">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-6">
               Start Your Child's Learning Journey Today
             </h2>
 
@@ -666,7 +666,7 @@ export default function OnlineProgramsSection({ setActive = () => {} }) {
                 onClick={() => setActive("reach-out")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-white text-blue-600 rounded-full font-bold text-lg shadow-2xl"
+                className="px-6 py-3 sm:px-10 sm:py-5 bg-white text-blue-600 rounded-full font-bold text-base sm:text-lg shadow-2xl"
               >
                 Book Free Trial Class
               </motion.button>
@@ -679,7 +679,7 @@ export default function OnlineProgramsSection({ setActive = () => {} }) {
                 }
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all"
+                className="px-6 py-3 sm:px-10 sm:py-5 border-2 border-white text-white rounded-full font-bold text-base sm:text-lg hover:bg-white/10 transition-all"
               >
                 View Course Catalog
               </motion.button>

@@ -144,12 +144,12 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
     <div className="bg-gradient-to-br from-[#fdfefe] via-[#f4f7ff] to-[#eef2ff]">
       
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden py-24">
+      <section className="relative overflow-hidden py-16 sm:py-24">
         {/* Decorative blobs */}
         <div className="absolute top-0 right-0 w-[520px] h-[520px] bg-orange-200 rounded-full blur-3xl opacity-40" />
         <div className="absolute bottom-0 left-0 w-[420px] h-[420px] bg-blue-200 rounded-full blur-3xl opacity-40" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           
           {/* LEFT CONTENT */}
           <motion.div
@@ -165,7 +165,7 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
               🚀 Robotics & AI Competitions
             </motion.span>
 
-            <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
               Unleash Innovation through <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-pink-500">
                 Robotics & AI
@@ -181,7 +181,7 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
             <div className="flex flex-wrap gap-4">
               <motion.button 
                 onClick={() => setActive("reach-out")}
-                className="border-2 border-blue-500 text-blue-500 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all"
+                className="border-2 border-blue-500 text-blue-500 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold hover:bg-blue-50 transition-all"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -202,7 +202,7 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
             variants={staggerContainer}
             className="relative flex justify-center"
           >
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-4 sm:gap-8">
               {siteImages.competitions.gallery.map((img, i) => (
                 <motion.div
                   key={i}
@@ -216,7 +216,7 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
                     }
                   }}
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="w-40 h-40 rounded-2xl bg-white shadow-2xl overflow-hidden cursor-pointer"
+                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-2xl bg-white shadow-2xl overflow-hidden cursor-pointer"
                 >
                   <img
                     src={img}
@@ -232,7 +232,7 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
 
       {/* STATS SECTION */}
       <section className="py-16 bg-white/50 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -261,7 +261,7 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute top-20 right-20 w-72 h-72 bg-purple-200 rounded-full blur-3xl opacity-30" />
         
-        <div className="relative z-10 max-w-7xl mx-auto px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -272,7 +272,7 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
               Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Competitions</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Participate in world-renowned robotics and AI competitions designed for various age groups and skill levels
             </p>
           </motion.div>
@@ -334,7 +334,7 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
 
       {/* BENEFITS SECTION */}
       <section className="py-24 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -345,7 +345,7 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
               Why Participate in <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-pink-500">Our Competitions?</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Transform your learning journey with hands-on robotics and AI experiences
             </p>
           </motion.div>
@@ -381,7 +381,7 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
       <section className="py-24 relative overflow-hidden">
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-200 rounded-full blur-3xl opacity-30" />
         
-        <div className="relative z-10 max-w-7xl mx-auto px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -392,7 +392,7 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
               What We <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-teal-500">Provide</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive support to ensure your success in robotics competitions
             </p>
           </motion.div>
@@ -426,7 +426,7 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
 
       {/* COMPETITION TIMELINE */}
       <section className="py-24 bg-gradient-to-br from-purple-50 to-pink-50">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -437,7 +437,7 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
               Competition <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">Journey</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto">
               From registration to international championships - your path to excellence
             </p>
           </motion.div>
@@ -486,7 +486,7 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
         
-        <div className="relative z-10 max-w-5xl mx-auto px-8 text-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -504,14 +504,14 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-blue-600 px-10 py-5 rounded-full font-bold text-lg shadow-2xl hover:shadow-3xl transition-all"
+                className="bg-white text-blue-600 px-6 py-3 sm:px-10 sm:py-5 rounded-full font-bold text-base sm:text-lg shadow-2xl hover:shadow-3xl transition-all"
               >
                 Register Your School
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition-all"
+                className="border-2 border-white text-white px-6 py-3 sm:px-10 sm:py-5 rounded-full font-bold text-base sm:text-lg hover:bg-white/10 transition-all"
               >
                 Download Brochure
               </motion.button>
@@ -526,7 +526,7 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
 
       {/* TESTIMONIALS SECTION */}
       <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -595,7 +595,7 @@ export default function RoboticsAICompetitions({ setActive = () => {} }) {
 
       {/* FAQ SECTION */}
       <section className="py-24">
-        <div className="max-w-4xl mx-auto px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial="hidden"
             whileInView="visible"
